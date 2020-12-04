@@ -1,0 +1,28 @@
+<div class="operaciones">
+  <a href="/sales/sales-log" class="btn btn-success btn-block btn-lg"> <i class="fa fa-plus"></i> Registrar producto</a>
+</div>
+<div class="row">
+  {{#each searchSale}}
+    <div class="col-md-4" style="margin-top: 2%;">
+      <div class="card">
+        <div class="card-body">
+          <img src="/img/clean.png" alt="" class="img-fluid">
+          <h4 class="card-title"> <strong>Producto: </strong> {{this.nombreProducto}} </h4>
+          <p class="text-justify"> <strong>Descripción: </strong> {{this.descProducto}}</p>
+          <p><strong>Stock:</strong> {{this.cantProducto}}</p>
+          <p><strong>Valor C/U: $</strong> {{this.valorProducto}}</p>
+        </div>
+        <div class="card-footer">
+          <a href="/sales/edit/{{_id}}" class="btn btn-sm btn-info"><i class="fa fa-edit"></i> Editar</a>
+          <a href="#" class="btn btn-sm btn-danger float-right"><i class="fa fa-trash"></i> Eliminar</a>
+        </div>
+      </div>
+    </div>
+    {{else}}
+    <div class="card mx-auto">
+      <div class="card-body">
+        <p class="lead"> No tenemos productos en Stock!!!</p>
+      </div>
+    </div>
+  {{/each}}
+</div>

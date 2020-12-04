@@ -1,0 +1,40 @@
+<div class="col-md-6 mx-auto" style="margin-top:2%;">
+  <div class="card">
+    <div class="card-header bg-info">
+      <h3>Editar producto</h3>
+    </div>
+    <div class="card-body">
+      <form class="" action="/sales/sales-edit/{{saleEdit._id}}?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="form-group">
+          <label for="">Producto: </label>
+          <input type="text" name="nombreProducto1" class="form-control" value="{{saleEdit.nombreProducto}}">
+        </div>
+        <div class="form-group">
+          <label for="">Descripción:</label>
+          <textarea name="descProducto1" class="form-control">{{saleEdit.descProducto}}</textarea>
+        </div>
+        <div class="form-group">
+          <label for="">Tipo producto:</label>
+          <select name="tipoProducto1" class="form-control">
+            <option value="" disabled selected>Seleccione una opción...</option>
+          	<option value="1">Desinfectante.</option>
+          	<option value="2">Jabones de mano.</option>
+          	<option value="3">Sanitizantes</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="">Cantidad: </label>
+          <input type="number" name="cantProducto1" class="form-control" value="{{saleEdit.cantProducto}}">
+        </div>
+        <div class="form-group">
+          <label for="">Valor unitario: </label>
+          <input type="text" name="valorProducto1" class="form-control" value="{{saleEdit.valorProducto}}">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-info btn-block" type="submit" name="btnProducto1"> Aceptar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

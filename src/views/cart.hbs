@@ -1,0 +1,59 @@
+<h1 style="background-color:rgb(10, 206, 20); color:white; padding: 1rem;">{{title}}</h1>
+{{# if products }}
+    <div class="cart page">
+        <ul class="list-group">
+             
+        <table class="table">
+           
+            <thead>
+                <tr>
+                <th scope="col">Titulo</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Accion</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{# each products }}
+                <tr>
+                <td>{{this.item.title}}</td>
+                <td>{{this.item.description}}</td>
+                <td>{{this.quantity}}</td>
+                <td>{{this.price}}</td>
+                <td><a href="/remove/{{this.item._id}}" class="btn btn-danger"></i> Eliminar</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+    </table>
+
+            
+        </ul>
+    </div>
+    <div class="text-right">
+        <strong>Total: $ {{ totalPrice }} </strong>
+        {{# each products }}
+ 
+{{/each}}
+    </div>
+    
+ 
+    
+{{ else }}
+
+    El carro esta limpio
+{{/if}}
+ {{# each products }}
+    <a class="btn btn-success"  onclick="Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Transacción Exitosa',
+            showConfirmButton: false,
+            timer: 10000
+            })" href="/remove/{{this.item._id}}" >Finalizar Compra</a>
+ 
+{{/each}}
+ 
+   
+
+
